@@ -14,5 +14,7 @@ RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER}
+RUN jupyter nbextension install connector-jupyter --py --sys-prefix
+RUN jupyter nbextension enable connector-jupyter --py --sys-prefix
 WORKDIR ${HOME}
 USER ${USER}
