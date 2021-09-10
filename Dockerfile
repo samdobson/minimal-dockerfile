@@ -11,7 +11,7 @@ ARG NB_USER
 ARG NB_UID
 ENV USER ${NB_USER}
 ENV HOME /home/${NB_USER}
-RUN jupyter contrib nbextension install --user ${NB_UID}
+
 
 RUN adduser --disabled-password \
     --gecos "Default user" \
