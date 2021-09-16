@@ -1,5 +1,7 @@
 FROM python:3.8-slim
 RUN pip install --no-cache notebook jupyterlab
+RUN pip install mstrio-py
+
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
