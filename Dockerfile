@@ -1,6 +1,7 @@
 FROM python:3.8-slim
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook && \
+    pip install --no-cache notebook jupyterlab && \
     pip install jupyter-client==7.0.2 && \
     pip install jupyter-contrib-core==0.3.3 && \
     pip install jupyter-contrib-nbextensions==0.5.1 && \
