@@ -5,6 +5,8 @@ RUN pip install --no-cache notebook jupyterlab
 RUN pip install npm
 RUN pip install ipywidgets
 RUN pip install mstrio-py
+RUN pip install jupyter_contrib_nbextensions
+
 RUN jupyter nbextension install connector-jupyter --py --sys-prefix
 RUN jupyter nbextension enable connector-jupyter --py --sys-prefix
 
