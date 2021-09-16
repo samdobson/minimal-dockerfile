@@ -1,22 +1,4 @@
-FROM python:3.7-slim
-# install the notebook package
-RUN pip install --no-cache --upgrade pip && \
-    pip install --no-cache notebook && \
-    pip install mstrio-py && \
-    pip install jupyter_contrib_nbextensions
-
-
-# create user with a home directory
-ARG NB_USER
-ARG NB_UID
-ENV USER ${NB_USER}
-ENV HOME /home/${NB_USER}
-
-
-RUN adduser --disabled-password \
-    --gecos "Default user" \
-    --uid ${NB_UID} \
-    ${NB_USER}
-
-WORKDIR ${HOME}
-USER ${USER}
+FROM python:3.8-slim
+RUN pip install --no-cache notebook jupyterlab
+RUN useradd -m jovyan
+USER jovyan
