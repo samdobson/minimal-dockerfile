@@ -16,7 +16,7 @@ RUN pip install npm
 RUN pip install ipywidgets
 RUN pip install mstrio-py
 RUN pip install jupyter_contrib_nbextensions
-RUN jupyter contrib nbextension install --system
+RUN jupyter contrib nbextension install --sys-prefix
 
 RUN jupyter nbextension install connector-jupyter --py --sys-prefix
 RUN jupyter nbextension enable connector-jupyter --py --sys-prefix
