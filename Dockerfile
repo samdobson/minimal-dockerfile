@@ -5,8 +5,8 @@ RUN pip install --no-cache notebook jupyterlab
 RUN pip install npm
 RUN pip install ipywidgets
 RUN pip install mstrio-py
-RUN jupyter nbextension install connector-jupyter --user --py 
-RUN jupyter nbextension enable connector-jupyter --py 
+RUN jupyter nbextension install connector-jupyter --py --sys-prefix
+RUN jupyter nbextension enable connector-jupyter --py --sys-prefix
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
