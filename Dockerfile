@@ -18,3 +18,7 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+
+RUN jupyter contrib nbextension install --user
+RUN jupyter nbextension install connector-jupyter --py --sys-prefix
+RUN jupyter nbextension enable connector-jupyter --py --sys-prefix
