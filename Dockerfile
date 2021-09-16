@@ -1,7 +1,8 @@
 FROM python:3.8-slim
 RUN pip install --no-cache notebook jupyterlab
 RUN pip install mstrio-py
-
+RUN jupyter nbextension install connector-jupyter --user --py 
+RUN jupyter nbextension enable connector-jupyter --py 
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
@@ -19,6 +20,5 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
-RUN jupyter contrib nbextension install --user
-RUN jupyter nbextension install connector-jupyter --user --py 
-RUN jupyter nbextension enable connector-jupyter --py 
+
+
