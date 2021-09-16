@@ -1,5 +1,6 @@
 FROM python:3.8-slim
 RUN pip install --no-cache notebook jupyterlab
+RUN pip install ipywidgets
 RUN pip install mstrio-py
 RUN jupyter nbextension install connector-jupyter --user --py 
 RUN jupyter nbextension enable connector-jupyter --py 
